@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\CustomScripts",
+    "\\Migrations",
+    "\\Models",
+    "\\packages\\Microsoft.AspNet.Identity.Owin.tr.2.2.3",
+    "\\Views",
+    "\\Views\\ToDoes"
+  ],
+  "SelectedNode": "\\ToDoListApp.sln",
+  "PreviewInSolutionExplorer": false
+}

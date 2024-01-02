@@ -1,0 +1,140 @@
+﻿@model ToDoListApp.Models.ToDo
+
+@{
+    ViewBag.Title = "Checklist";
+}
+
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(to right, #3498db, #6c5ce7);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        font-family: 'Pacifico', cursive;
+        color: #fff;
+        text-align: center;
+        margin-top: 40px;
+        font-size: 2.5em;
+    }
+
+    #todoCreateFrom {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        margin-bottom: 20px;
+        text-align: center; /* Center the form elements */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        border: 1px solid #fff;
+        border-radius: 5px;
+        color: #fff;
+        background-color: transparent;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .btn-primary {
+        background-color: #3498db;
+        border: 1px solid #3498db;
+        border-radius: 5px;
+        color: #fff;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border: 1px solid #2980b9;
+        }
+
+    #tableDiv {
+        max-width: 400px; /* Adjust as needed */
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Styling for Edit and Delete buttons */
+    .edit-btn,
+    .delete-btn {
+        display: inline-block;
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .edit-btn {
+        background-color: #27ae60;
+        color: #fff;
+    }
+
+        .edit-btn:hover {
+            background-color: #218c54;
+        }
+
+    .delete-btn {
+        background-color: #e74c3c;
+        color: #fff;
+    }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+    /* Font Awesome Icons */
+    .fas {
+        margin-right: 5px;
+    }
+</style>
+
+<h2>ToDo Checklist</h2>
+
+<div id="todoCreateFrom">
+    @using (Ajax.BeginForm("AJAXCreate", "ToDoes", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        UpdateTargetId = "tableDiv"
+    }))
+    {
+        <div class="form-group">
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.EditorFor(model => model.Describtion, new { htmlAttributes = new { @class = "form-control", placeholder = "Add a new ToDo..." } })
+                @Html.ValidationMessageFor(model => model.Describtion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add ToDo</button>
+    }
+</div>
+
+<div id="tableDiv"></div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/CustomScripts/BuildTable.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iS
