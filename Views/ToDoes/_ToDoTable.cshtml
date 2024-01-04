@@ -1,7 +1,60 @@
 ﻿@model IEnumerable<ToDoListApp.Models.ToDo>
 
-<div id="progressBarToDo">
+<style>
+    body {
+        background: linear-gradient(to bottom right, #3498db, #8e44ad); /* Replace with your gradient colors */
+        color: #fff;
+        font-family: 'Quicksand', sans-serif;
+        min-height: 100vh; /* Minimum height to cover the full viewport */
+        margin: 0; /* Remove default body margin */
+    }
 
+    #progressBarToDo {
+        margin: 20px;
+    }
+
+    .progress-bar {
+        background-color: #1abc9c; /* Replace with your progress bar color */
+    }
+
+    .table {
+        background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 20px;
+    }
+
+        .table th, .table td {
+            border: none;
+        }
+
+    .CompletedToDo {
+        text-decoration: line-through;
+    }
+
+    .ActiveCheck {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 18px;
+        height: 18px;
+        background-color: #fff;
+        border: 2px solid #3498db; /* Replace with your checkbox border color */
+        border-radius: 5px;
+        margin: 0;
+        cursor: pointer;
+        vertical-align: middle;
+        position: relative;
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+
+        .ActiveCheck:checked {
+            background-color: #3498db; /* Replace with your checkbox checked background color */
+            border: 2px solid #fff; /* Replace with your checkbox checked border color */
+        }
+</style>
+
+<div id="progressBarToDo">
     <div class="progress">
         <div class="progress-bar" role="progressbar"
              style="width:@(Html.AttributeEncode(ViewBag.Percent))%"></div>
@@ -9,7 +62,6 @@
 </div>
 
 <table class="table">
-
     @foreach (var item in Model)
     {
         <tr>
@@ -32,7 +84,6 @@
             </td>
         </tr>
     }
-
 </table>
 
 <script src="~/CustomScripts/AddCheckBoxListener.js"></script>
