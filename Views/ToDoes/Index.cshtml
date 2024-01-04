@@ -57,11 +57,41 @@
         border: 1px solid #3498db;
         border-radius: 5px;
         color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        cursor: pointer;
     }
 
         .btn-primary:hover {
             background-color: #2980b9;
             border: 1px solid #2980b9;
+            transform: scale(1.05);
+        }
+
+    .add-todo-btn {
+        display: inline-block;
+        padding: 15px 30px !important; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        font-size: 18px !important; 
+        text-align: center;
+        text-decoration: none;
+        overflow: hidden;
+        position: relative;
+        background-color: #3498db;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .add-todo-btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
         }
 
     ::placeholder {
@@ -134,7 +164,7 @@
                 @Html.ValidationMessageFor(model => model.Describtion, "", new { @class = "text-danger" })
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Add ToDo</button>
+        <button type="submit" class="btn add-todo-btn">Add ToDo</button>
     }
 </div>
 
@@ -146,5 +176,5 @@
     @Scripts.Render("~/bundles/jqueryval")
 }
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iSFOVJz5q2r5j5sZ6KCiR5Slr/NNKkEfudz9Zjfa/xYB3F5l5uU6udoSM" crossorigin="anonymous">
