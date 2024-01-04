@@ -14,7 +14,7 @@
             type: 'POST',
             success: function (result) {
                 $('#tableDiv').html(result);
+            }
             });
-
     });
 })

@@ -100,8 +100,12 @@ namespace ToDoList.Controllers
                 toDo.IsDone = false;
                 db.ToDos.Add(toDo);
                 db.SaveChanges();
+
+                // Redirect to the ToDoes page
+                return RedirectToAction("Index", "ToDoes");
             }
 
+            // Handle the case where the model state is invalid
             return PartialView("_ToDoTable", GetMyToDoes());
         }
 
