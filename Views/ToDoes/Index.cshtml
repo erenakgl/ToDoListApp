@@ -5,6 +5,7 @@
 }
 
 <style>
+    /* Add some fancy styles here */
     body {
         font-family: 'Quicksand', sans-serif;
         background: linear-gradient(to right, #3498db, #6c5ce7);
@@ -29,11 +30,19 @@
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         margin-bottom: 20px;
-        text-align: center; /* Center the form elements */
     }
 
     .form-group {
         margin-bottom: 15px;
+    }
+
+    #tableDiv {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
     .form-control {
@@ -41,9 +50,6 @@
         border-radius: 5px;
         color: #fff;
         background-color: transparent;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
     }
 
     .btn-primary {
@@ -51,10 +57,6 @@
         border: 1px solid #3498db;
         border-radius: 5px;
         color: #fff;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 
         .btn-primary:hover {
@@ -62,14 +64,22 @@
             border: 1px solid #2980b9;
         }
 
-    #tableDiv {
-        max-width: 400px; /* Adjust as needed */
-        margin: 0 auto;
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    ::placeholder {
+        color: #aaa;
     }
+
+    /* Additional Styles */
+    #coolStuffs {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        #coolStuffs img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            margin-top: 20px;
+        }
 
     /* Styling for Edit and Delete buttons */
     .edit-btn,
@@ -137,4 +147,4 @@
 }
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iS
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iSFOVJz5q2r5j5sZ6KCiR5Slr/NNKkEfudz9Zjfa/xYB3F5l5uU6udoSM" crossorigin="anonymous">
